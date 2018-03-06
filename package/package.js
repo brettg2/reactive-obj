@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'xamfoo:reactive-obj',
-  version: '0.5.0',
+  name: 'icebrg82:reactive-obj',
+  version: '0.5.1',
   summary: 'Reactivity for nested objects',
-  git: 'https://github.com/xamfoo/reactive-obj',
+  git: 'https://github.com/brettg2/reactive-obj/tree/brettg2/delete',
   documentation: 'README.md'
 });
 
@@ -20,6 +20,6 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('xamfoo:reactive-obj');
+  api.use('icebrg82:reactive-obj');
   api.addFiles('reactive-obj-tests.js');
 });
