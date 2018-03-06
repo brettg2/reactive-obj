@@ -225,6 +225,10 @@ _.extend(ReactiveObj.prototype, {
     return self;
   },
 
+  delete: function(keyPath, value) {
+    this.set(keyPath, undefined)
+  },
+
   update: function (keyPath, valIfNotSet, updater) {
     var self = this;
     var write = {};
