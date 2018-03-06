@@ -213,7 +213,7 @@ _.extend(ReactiveObj.prototype, {
 
     // If value assigned is the same as the old value, it is a noop
     noop = self._visitPath(self._obj, keyPath, function (context) {
-      if (context.value === value) return true;
+      if (typeof context !== 'object' && context.value === value) return true;
     });
     if (noop === true) return self;
 
@@ -433,7 +433,8 @@ _.extend(ReactiveObj.prototype, {
           ('equals' in d) &&
           ((d.lastVal === d.equals ?1:0) + (val === d.equals ?1:0) === 1)
         ) ||
-        val !== d.lastVal
+        val !== d.lastVal ||
+        typeof val === 'object'
       ) d.comp.invalidate();
     };
   },
